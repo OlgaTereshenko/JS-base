@@ -9,18 +9,17 @@
 <body>
     <script>
         // предположим, что корзина уже заполнена товарами
-    var basket = {хлеб: 15, яблоко: 30, сок: 45};
+    var basket = [['Хлеб', 15], ['Яблоко', 30], ['Сок', 45]];
     var sum = 0;
-        
-    function countBasketPrice (product) {
-        sum = sum + product;
+     
+    function countBasketPrice(x) {
+        for (i = 0; i < basket.length; i++) { 
+        sum = sum + basket[i][1];
+        }
+        return sum;
     }
-
-    for (key in basket) {
-        countBasketPrice (basket[key])
-    }  
-
-    console.log(sum);
+      console.log("Сумма товаров: " + countBasketPrice (basket));
+     
     </script>
 </body>
 </html>

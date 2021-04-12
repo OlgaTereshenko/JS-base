@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset "utf-8">
+    <title>задачи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+
+function objFill(num){
+	for (key in obj) {
+	obj[key] = num % 10; 
+	num = Math.floor(num /10);
+	}
+};
+
+var num = +prompt('Введите число от 0 до 999');
+var obj = {
+единицы: 0,
+десятки: 0,
+сотни: 0
+};
+
+if (num > 999) {
+    alert("Вы ввели число больше 999");
+    } else {
+    objFill(num);
+};
+
+alert("единицы: " + obj["единицы"] + " десятки: " + obj["десятки"] + " сотни: " + obj["сотни"]);
+
+</script>
+</body>
+</html>

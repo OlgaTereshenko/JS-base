@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset "utf-8">
+<title>Шахматная доска</title>
+<link rel="stylesheet" href="lesson-5.css">
+</head>
+<body>
+    <div class="main-block">
+        <div class="chess-block"></div>
+    </div>
+    <script>
+        function chessBoard(){
+            let chessBlock = document.querySelector('.chess-block');
+            let flag = true;
+            let figure = {
+                0 : ['figure/rook-black.png', 'figure/horse-black.png', 'figure/officer-black.png', 'figure/queen-black.png', 'figure/king-black.png','figure/officer-black.png', 'figure/horse-black.png', 'figure/rook-black.png'],
+                1 : ['figure/pawn-black.png', 'figure/pawn-black.png', 'figure/pawn-black.png', 'figure/pawn-black.png', 'figure/pawn-black.png', 'figure/pawn-black.png', 'figure/pawn-black.png', 'figure/pawn-black.png'],
+                6 : ['figure/pawn-white.png', 'figure/pawn-white.png', 'figure/pawn-white.png', 'figure/pawn-white.png', 'figure/pawn-white.png', 'figure/pawn-white.png', 'figure/pawn-white.png', 'figure/pawn-white.png'],
+                7 : ['figure/rook-white.png', 'figure/horse-white.png', 'figure/officer-white.png', 'figure/king-white.png', 'figure/queen-white.png', 'figure/officer-white.png', 'figure/horse-white.png','figure/rook-white.png'],
+            };
+      
+            for (let i = 0; i < 8; i++){
+                for (let j = 0; j < 8; j++) {
+                    if (j == 0) flag = !flag;
+                    var block = document.createElement('div');
+                    if (flag) block.className = 'block black';
+                    else block.className = 'block white';
+                    if (figure[i] !== undefined && figure[i][j] !== undefined) {
+                        block.innerHTML = "<img src='" + figure[i][j] + "'>";
+                    }
+                  
+                    chessBlock.appendChild(block);
+                    flag = !flag;
+                }
+            }
+        }
+
+        function chessBoardBorder(){
+            let mainBlock = document.querySelector('.main-block');
+            var letter = ['', 'a', 'b', 'c', 'd', 'e', 'f','g', 'h', ''];
+
+            for (let i = 0; i < 10; i++){
+                for (let j = 0; j < 10; j++) {
+                    var blockBorder = document.createElement('div-2');
+                    blockBorder.className = 'block-border';
+                    mainBlock.appendChild(blockBorder); 
+                    if((j == 0 || j == 9) && i !== 0 && i !== 9) {
+                        blockBorder.innerHTML = 9-i;
+                    }
+                    if (i == 0 || i == 9) {
+                    blockBorder.innerHTML = letter[j];
+                    }
+                }
+                
+            }
+        }
+
+        chessBoard();
+        chessBoardBorder();
+
+    </script>
+</body>
+</html>

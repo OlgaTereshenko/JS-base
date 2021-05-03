@@ -46,9 +46,9 @@ const game = {
      * Функция выполняет паузу игры.
      */
     pause() {
+        game.stopSnake(moveSnake);
+        alert('Пауза. Чтобы продолжить игру, нажмите на клавишу направления движения');
         game.setGameStatus(GAME_STATUS_PAUSED);
-        alert('Пауза');
-        game.setGameStatus(GAME_STATUS_STARTED);
     },
 
     /**
@@ -66,12 +66,18 @@ const game = {
      * @param event {KeyboardEvent} Событие нажатия на клавишу.
      */
 
+    //  останавливаем движение змейки по переданному ранее значению кнопки 
+    // (эта функция нужна, когда мы меняем направление)
+    stopSnake(moveSnake) {
+        clearInterval(moveSnake);
+    },
+
     // Индикатор работы setInterval
     moveSnake: 0,
 
     move(event) {
         let direction = null;
-
+        game.setGameStatus(GAME_STATUS_STARTED);
             /* смотрим на код клавиши и
             * устанавливаем соответсвующее направление движения */
         switch (event.keyCode) {
@@ -91,9 +97,7 @@ const game = {
                 return;
         };
 
-        //  останавливаем движение змейки по переданному ранее значению кнопки 
-        // (эта функция нужна, когда мы меняем направление)
-        clearInterval(this.moveSnake);
+        game.stopSnake(this.moveSnake);
 
         // Устанавливаем интервал передвижения змейки по полю в соответствии
         //  с нажатой кнопкой направления

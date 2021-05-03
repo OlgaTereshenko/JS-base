@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset "utf-8">
+    <title>задачи</title>
+</head>
+<body>
+    <script>
+        if (!("a" in window)) {
+            var a = 1;
+        }
+        alert(a); // выведет undefined, тк "а" есть в DOM-документе, содержащемся  в объекте window.
+        
+        var b = function a(x) {
+            x && a(--x);
+        };
+        alert(a); // выведет ошибку, тк мы хотим вывести переменную 'а', но она у нас не объявлена. 
+        
+        function a(x) {
+            return x * 2;
+        }
+        var a;
+        alert(a); // выведет undefined, тк мы хотим вывести переменную 'а', но значение ей не присвоили
+        
+        function b(x, y, a) {
+            arguments[2] = 10;
+            alert(a); // выведет 10, тк с помощью объекта arguments мы присвоили 'а' значение 10.
+        }
+        b(1, 2, 3);
+        
+        function a() {
+            alert(this); // выведет объект window, тк значением this будет глобальный объект window.
+        }
+        a.call(null); 
+        
+    </script>
+</body>
+</html>

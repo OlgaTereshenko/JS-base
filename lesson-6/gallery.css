@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    width: 650px;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.box-img {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+.thumbnails img {
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 150ms ease-in-out;
+}
+.thumbnails img:hover {
+    transform: translateY(-5px);
+}
+
+
+.button-left {
+    cursor: pointer;
+    margin-top: 200px;
+}
+
+.button-right {
+    cursor: pointer;
+    margin-top: 200px;
+}
+
+.arrow {
+    width: 45px;
+    height: 30px;
+}

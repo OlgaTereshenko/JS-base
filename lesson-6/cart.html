@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="cards">
+        <div class="product">
+            <p class="product__name">product</p>
+            <ul class="product__card">
+                <li id="trousers" class="product__cards-item">
+                    <img class="product__cards-img" src="./img/man-trousers.jpg" alt="trousers">
+                    <h3 class="product__name">trousers</h3>
+                    <p class="product__description">Known for her sculptural takes on traditional tailoring, Australian
+                        arbiter of cool Kym
+                        Ellery
+                        teams up with Moda Operandi.</p>
+                    <p class="product__price">price: 520.00</p>
+                    <button class="product_button" type="submit">Add to cart</button>
+                </li>
+                <li id = "panama" class="product__cards-item">
+                    <img class="product__cards-img" src="./img/man-panama.jpg" alt="panama">
+                    <h3 class="product__name">panama</h3>
+                    <p class="product__description">Known for her sculptural takes on traditional tailoring, Australian
+                        arbiter of cool Kym
+                        Ellery
+                        teams up with Moda Operandi.</p>
+                    <p class="product__price">price: 320.00</p>
+                    <button class="product_button" type="submit">Add to cart</button>
+                </li>
+                <li id = "jacket" class="product__cards-item">
+                    <img class="product__cards-img" src="./img/woman-jacket.jpg" alt="shirt">
+                    <h3 class="product__name">jacket</h3>
+                    <p class="product__description">Known for her sculptural takes on traditional tailoring, Australian
+                        arbiter of cool Kym
+                        Ellery
+                        teams up with Moda Operandi.</p>
+                    <p class="product__price">price: 600.00</p>
+                    <button id="product_button" class="product_button" type="submit">Add to cart</button>
+                </li>
+            </ul>
+        </div>
+            <div class="cart">
+                <p class="product__name">cart</p>
+                <div class="product_list"></div>
+                <div id = "total_price" class="total_price"></div>
+            </div>
+    </section>
+    <script src="cart.js"></script>
+</body>
+</html>
